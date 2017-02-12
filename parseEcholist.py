@@ -1,10 +1,7 @@
 #!/usr/local/bin/python3
 # coding: utf8
 
-import re
-
 echolist = "/home/besco/Downloads/240-5832.txt";
-
 
 def read_file(filename):
     echo = ''
@@ -22,7 +19,6 @@ def read_file(filename):
             desc = line.split("\"")[1].strip("\n ")
             echolist.append({'name' : echo, 'desc': desc})
         else:
-            #desc = "---"+desc.strip("\n") + line.strip()+"---"
             echolist[-1]['desc'] = echolist[-1]['desc'].strip("\t") + " "+line.strip("\"\t\n ")
             pass
     f.close()
