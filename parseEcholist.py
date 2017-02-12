@@ -29,4 +29,6 @@ def read_file(filename):
     return echolist
 
 parsed_echos = read_file(echolist)
-print(parsed_echos)
+
+for i in range(len(parsed_echos)):
+    print(parsed_echos[i]['name'] + " - " + parsed_echos[i]['desc'])
