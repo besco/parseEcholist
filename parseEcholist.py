@@ -1,6 +1,8 @@
 #!/usr/local/bin/python3
 # coding: utf8
 
+from sys import exit as sys_exit
+
 echolist = "/home/besco/Downloads/240-5832.txt"
 
 
@@ -10,6 +12,7 @@ def read_file(filename):
         f = open(filename, "r")
     except:
         print("Can't open file: " + filename)
+        sys_exit(8)
     while True:
         line = f.readline()
         if not line:
@@ -20,7 +23,6 @@ def read_file(filename):
             echolist.append({'name': echo, 'desc': desc})
         else:
             echolist[-1]['desc'] = echolist[-1]['desc'].strip("\t") + " "+line.strip("\"\t\n ")
-            pass
     f.close()
     return echolist
 
