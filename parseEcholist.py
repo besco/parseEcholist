@@ -19,11 +19,11 @@ def read_file(filename):
             break
         if line[0].strip() != '':
             echo = line.strip("\n").split()[0]
-            desc = line.split("\"")[1].strip("\n")
+            desc = line.split("\"")[1].strip("\n ")
             echolist.append({'name' : echo, 'desc': desc})
         else:
             #desc = "---"+desc.strip("\n") + line.strip()+"---"
-            echolist[-1]['desc'] = echolist[-1]['desc'] + " "+line.strip("\"\n ")
+            echolist[-1]['desc'] = echolist[-1]['desc'].strip("\t") + " "+line.strip("\"\t\n ")
             pass
     f.close()
     return echolist
@@ -31,4 +31,4 @@ def read_file(filename):
 parsed_echos = read_file(echolist)
 
 for i in range(len(parsed_echos)):
-    print(parsed_echos[i]['name'] + " - " + parsed_echos[i]['desc'])
+    print('{:3d}. {:40} {}'.format(i, parsed_echos[i]['name'], parsed_echos[i]['desc']))
