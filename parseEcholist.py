@@ -9,7 +9,7 @@ def read_file(filename):
     try:
         f = open(filename, "r")
     except:
-        print("Can't open file.")
+        print("Can't open file: " + filename)
     while True:
         line = f.readline()
         if not line:
