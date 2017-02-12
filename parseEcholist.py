@@ -2,8 +2,13 @@
 # coding: utf8
 
 from sys import exit as sys_exit
+from sys import argv as sys_argv
 
-echolist = "/home/besco/Downloads/240-5832.txt"
+if len(sys_argv) == 1:
+    echolist = "/home/besco/Downloads/240-5832.txt"
+else:
+    echolist = sys_argv[1]
+
 
 
 def read_file(filename):
@@ -29,4 +34,4 @@ def read_file(filename):
 parsed_echos = read_file(echolist)
 
 for i in range(len(parsed_echos)):
-    print('{:3d}. {:40} {}'.format(i, parsed_echos[i]['name'], parsed_echos[i]['desc']))
+    print('{:3d}. {:40} {}'.format(i+1, parsed_echos[i]['name'], parsed_echos[i]['desc']))
