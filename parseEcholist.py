@@ -1,10 +1,10 @@
 #!/usr/local/bin/python3
 # coding: utf8
 
-echolist = "/home/besco/Downloads/240-5832.txt";
+echolist = "/home/besco/Downloads/240-5832.txt"
+
 
 def read_file(filename):
-    echo = ''
     echolist = list()
     try:
         f = open(filename, "r")
@@ -17,7 +17,7 @@ def read_file(filename):
         if line[0].strip() != '':
             echo = line.strip("\n").split()[0]
             desc = line.split("\"")[1].strip("\n ")
-            echolist.append({'name' : echo, 'desc': desc})
+            echolist.append({'name': echo, 'desc': desc})
         else:
             echolist[-1]['desc'] = echolist[-1]['desc'].strip("\t") + " "+line.strip("\"\t\n ")
             pass
