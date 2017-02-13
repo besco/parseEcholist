@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3.5
 # coding: utf8
 
 from sys import exit as sys_exit
